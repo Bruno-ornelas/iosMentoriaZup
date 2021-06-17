@@ -57,6 +57,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4944066B267BCF580063ABF1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4949EAA5267BB2CC00C6D425 /* MarvelAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		4949955D267B6CD200F48217 = {
 			isa = PBXGroup;
 			children = (
@@ -78,7 +86,7 @@
 		49499568267B6CD200F48217 /* Busca Herois */ = {
 			isa = PBXGroup;
 			children = (
-				4949EAA5267BB2CC00C6D425 /* MarvelAPI.swift */,
+				4944066B267BCF580063ABF1 /* API */,
 				49499569267B6CD300F48217 /* AppDelegate.swift */,
 				4949956B267B6CD300F48217 /* SceneDelegate.swift */,
 				4949956D267B6CD300F48217 /* ViewController.swift */,

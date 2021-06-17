@@ -17,7 +17,7 @@ class MarvelAPI {
     static private let publicKey = "70e9ff8414e1c1285ea10893b8cb07fd"
     static private let limit = 50
     
-    class func loadHeros(name: String?, page: Int = 0, onComplete: @escaping () -> Void) {
+    class func loadCharacter(by name: String?, page: Int = 0, onComplete: @escaping () -> Void) {
         let offset = page * limit
         let startWith: String
         if let name = name, !name.isEmpty {
@@ -33,7 +33,7 @@ class MarvelAPI {
                 
                 return
             }
-           onComplete(marvelInfo)
+           onComplete()
         }
     }
     
