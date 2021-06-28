@@ -8,38 +8,59 @@
 import UIKit
 
 class HeroesTableViewController: UITableViewController {
+    
+    
+    var name: String?
+    var heroes: [Hero] = []
 
+    var loadingHeroes = false
+    var currentPage = 0
+    var total = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadHeroes()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    func loadHeroes() {
+        loadingHeroes = true
+        MarvelAPI.loadCharacter(by: name, page: currentPage) { (info) in
+            
+            if let info = info {
+                self.heroes += info.data.results
+                self.total = info.data.total
+                DispatchQueue.main.async {
+                    self.loadingHeroes = false
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return heroes.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as!
+        HeroTableViewCell
+        
+        
+        let hero = heroes[indexPath.row]
+        cell .prepareCell(with: hero)
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

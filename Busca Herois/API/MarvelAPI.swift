@@ -12,12 +12,12 @@ import Alamofire
 
 class MarvelAPI {
     
-    static private let basePath = "https://gateway.marvel.com/v1/public/characters"
+    static private let basePath = "https://gateway.marvel.com/v1/public/characters?"
     static private let privateKey = "cb5fe30f437d2a0d62b018cc2bf5c42c71ceb5e1"
     static private let publicKey = "70e9ff8414e1c1285ea10893b8cb07fd"
     static private let limit = 50
     
-    class func loadCharacter(by name: String?, page: Int = 0, onComplete: @escaping () -> Void) {
+    class func loadCharacter(by name: String?, page: Int = 0, onComplete: @escaping (MarvelInfo?) -> Void) {
         let offset = page * limit
         let startWith: String
         if let name = name, !name.isEmpty {
@@ -30,10 +30,10 @@ class MarvelAPI {
         
         AF.request(url).responseJSON { (response) in
             guard let data = response.data, let marvelInfo = try? JSONDecoder().decode(MarvelInfo.self, from: data), marvelInfo.code == 200 else {
-                
+                onComplete(nil)
                 return
             }
-           onComplete()
+           onComplete(marvelInfo)
         }
     }
     
@@ -41,7 +41,7 @@ class MarvelAPI {
         
         let ts = String(Date().timeIntervalSince1970)
         let hash = MD5(ts+privateKey+publicKey).lowercased()
-        return "ts=\(ts)&apikey=\(publicKey)&hash\(hash)"
+        return "ts=\(ts)&apikey=\(publicKey)&hash=\(hash)"
         
     }
     

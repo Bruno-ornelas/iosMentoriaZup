@@ -16,6 +16,7 @@
 		49499586267B700B00F48217 /* HeroesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49499585267B700B00F48217 /* HeroesTableViewController.swift */; };
 		4949EAA6267BB2CC00C6D425 /* MarvelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4949EAA5267BB2CC00C6D425 /* MarvelAPI.swift */; };
 		4949EAAF267BB31A00C6D425 /* MarvelClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4949EAAE267BB31A00C6D425 /* MarvelClasses.swift */; };
+		4987E6CF2689FF4A003B2314 /* HeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987E6CE2689FF4A003B2314 /* HeroTableViewCell.swift */; };
 		9523EDE96A51A0D3F60BAC84 /* Pods_Busca_Herois.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C290DAEFB24F2D289C3895 /* Pods_Busca_Herois.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		49499585267B700B00F48217 /* HeroesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesTableViewController.swift; sourceTree = "<group>"; };
 		4949EAA5267BB2CC00C6D425 /* MarvelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPI.swift; sourceTree = "<group>"; };
 		4949EAAE267BB31A00C6D425 /* MarvelClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelClasses.swift; sourceTree = "<group>"; };
+		4987E6CE2689FF4A003B2314 /* HeroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTableViewCell.swift; sourceTree = "<group>"; };
 		73E2AEDBA3D2ED0AA3B99C7A /* Pods-Busca Herois.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Busca Herois.debug.xcconfig"; path = "Target Support Files/Pods-Busca Herois/Pods-Busca Herois.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 				4949956D267B6CD300F48217 /* ViewController.swift */,
 				4949956F267B6CD300F48217 /* Main.storyboard */,
 				49499585267B700B00F48217 /* HeroesTableViewController.swift */,
+				4987E6CE2689FF4A003B2314 /* HeroTableViewCell.swift */,
 				49499572267B6CD300F48217 /* Assets.xcassets */,
 				49499574267B6CD300F48217 /* LaunchScreen.storyboard */,
 				49499577267B6CD300F48217 /* Info.plist */,
@@ -235,6 +238,7 @@
 				4949956A267B6CD300F48217 /* AppDelegate.swift in Sources */,
 				4949EAAF267BB31A00C6D425 /* MarvelClasses.swift in Sources */,
 				4949956C267B6CD300F48217 /* SceneDelegate.swift in Sources */,
+				4987E6CF2689FF4A003B2314 /* HeroTableViewCell.swift in Sources */,
 				49499586267B700B00F48217 /* HeroesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

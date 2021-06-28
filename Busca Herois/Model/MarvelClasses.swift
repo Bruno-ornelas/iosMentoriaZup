@@ -26,7 +26,12 @@ struct Hero: Codable {
     let id: Int
     let name: String
     let description: String
-    let url: [HeroURL]
+    let urls: [HeroURL]
+}
+
+enum CodingKeys: String, CodingKey {
+    case path
+    case ext = "extension"
 }
 
 struct HeroURL: Codable {
