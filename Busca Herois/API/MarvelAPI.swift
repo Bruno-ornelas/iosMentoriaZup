@@ -1,9 +1,3 @@
-//
-//  MarvelAPI.swift
-//  Busca Herois
-//
-//  Created by Bruno Ornelas on 17/06/21.
-//
 
 import Foundation
 import SwiftHash
@@ -40,6 +34,8 @@ class MarvelAPI {
            onComplete(marvelInfo)
         }
     }
+    
+    // Implementar erro API
     
     private class func getCredentials() -> String {
         
