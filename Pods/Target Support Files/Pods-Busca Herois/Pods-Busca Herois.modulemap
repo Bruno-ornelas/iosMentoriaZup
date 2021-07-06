@@ -1,6 +1,0 @@
-framework module Pods_Busca_Herois {
-  umbrella header "Pods-Busca Herois-umbrella.h"
-
-  export *
-  module * { export * }
-}
