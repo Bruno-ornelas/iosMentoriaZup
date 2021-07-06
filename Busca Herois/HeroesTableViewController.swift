@@ -10,12 +10,12 @@ import UIKit
 class HeroesTableViewController: UITableViewController {
     
     
-    var name: String?
-    var heroes: [Hero] = []
-
-    var loadingHeroes = false
-    var currentPage = 0
-    var total = 0
+    private var name: String = ""
+    
+    private var heroes: [Hero] = []
+    private var loadingHeroes = false
+    private var currentPage = 0
+    private var total = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,22 +23,32 @@ class HeroesTableViewController: UITableViewController {
 
     }
     
+    func setName(name: String) {
+        self.name = name
+    }
+    
+   
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    func loadHeroes() {
+    private func loadHeroes() {
         loadingHeroes = true
         MarvelAPI.loadCharacter(by: name, page: currentPage) { (info) in
             
             if let info = info {
                 self.heroes += info.data.results
                 self.total = info.data.total
-                DispatchQueue.main.async {
+                
+                DispatchQueue.main.async { // garantir carrega na main
                     self.loadingHeroes = false
                     self.tableView.reloadData()
                 }
+            }
+            else {
+                //tratativa de erro
             }
         }
     }

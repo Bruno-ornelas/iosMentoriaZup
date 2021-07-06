@@ -17,6 +17,10 @@ class MarvelAPI {
     static private let publicKey = "70e9ff8414e1c1285ea10893b8cb07fd"
     static private let limit = 50
     
+    
+    // @escaping e perigoso estudar arc gerencia de memoria 
+    
+    
     class func loadCharacter(by name: String?, page: Int = 0, onComplete: @escaping (MarvelInfo?) -> Void) {
         let offset = page * limit
         let startWith: String
